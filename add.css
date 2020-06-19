@@ -1,0 +1,23 @@
+body {
+  background: darkslategrey;
+}
+label {
+  color: beige;
+  font-size: 20px;
+  margin-left: 90px;
+}
+
+input {
+  margin-left: 50px;
+  margin-top: 5px;
+}
+
+button {
+  margin-left: 90px;
+  margin-top: 15px;
+  width: 80px;
+}
+
+.div1 {
+  align-items: center;
+}

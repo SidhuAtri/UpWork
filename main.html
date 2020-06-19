@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>UpWork - Todo App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>My Todo's</h1>
+    <ol></ol>
+
+    <script>
+      const electron = require("electron");
+      const { ipcRenderer } = electron;
+      const list = document.querySelector("ol");
+
+      ipcRenderer.on("todo:add", (event, todo) => {
+        const li = document.createElement("li");
+        const text = document.createTextNode(todo);
+
+        li.appendChild(text);
+        list.appendChild(li);
+      });
+
+      ipcRenderer.on("todo:clear", () => {
+        list.innerHTML = "";
+      });
+    </script>
+  </body>
+</html>

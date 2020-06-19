@@ -1,0 +1,26 @@
+<head>
+  <link rel="stylesheet" href="add.css" />
+</head>
+<body>
+  <form>
+    <div class="div1">
+      <label class="center">Enter Task</label>
+
+      <br />
+      <input class="center" autofocus />
+    </div>
+    <button class="center" type="submit">Add</button>
+  </form>
+
+  <script>
+    const electron = require("electron");
+    const { ipcRenderer } = electron;
+
+    document.querySelector("form").addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const { value } = document.querySelector("input");
+      ipcRenderer.send("todo:add", value);
+    });
+  </script>
+</body>
